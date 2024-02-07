@@ -1,0 +1,51 @@
+<table width="100%">
+	<tr>
+		<td style='padding-right:2px'>
+		<span class="badge w-100 badge-success text-center me-1">
+			<p class='m-0'>WIN</p>
+		    <p class='m-0' id="win_trk">0</p>
+		</span>
+		</td>
+		<td style='padding-right:2px'>
+			<span class="badge w-100 badge-danger text-center me-1">
+				<p class='m-0'>LOS</p>
+			    <p class='m-0' id="lose_trk">0</p>
+			</span>
+		</td>
+		<td style='padding-right:2px'>
+			<span class="badge w-100 badge-info id="roll_trk" text-center me-1">
+				<p class='m-0'>ROLL</p>
+			    <p class='m-0' id="roll_trk_txt">0</p>
+			</span>
+		</td>
+		<td>
+			<span class="badge w-100 badge-primary text-center">
+				<p class='m-0'>Profite</p>
+			    <p class='m-0' id="profite_global">0.00000000</p>
+			</span>
+		</td>
+	</tr>
+</table>
+<div class="card mt-2" style='height:350px;overflow:auto'>
+    <div class="card-body p-1">
+    	<table width="100%" id="tabelutama">
+    		<tr>
+    			<td width="16%"><span class="badge w-100 light badge-primary mb-2 me-1 text-start">Trade</span></td>
+    			<td width="42%"><span class="badge w-100 light badge-primary mb-2 text-start">Base</span></td>
+    			<td width="42%"><span class="badge w-100 light badge-primary mb-2 text-start">Trade</span></td>
+    		</tr>
+    		<tbody id="res_trade" >
+            </tbody>
+    	</table>
+    </div>
+</div>
+<div class="btn-group mb-2 btn-group-sm w-100">
+    <button class="btn btn-warning" type="button" onclick="shootTrade()">Shoot</button>
+    <button class="btn btn-primary" type="button" onclick="startTrade()" id="btn_start">Start</button>
+    <button class="btn btn-primary" type="button" onclick="stop_trade()" id="btn_stop" style="display:none">Stop</button>
+    <button class="btn btn-danger" type="button" onclick="boomTrade()">Boom</button>
+</div>
+<div class="btn-group mb-2 btn-group-sm w-100">
+    <button class="btn btn-info" type="button" onclick="stopOnWinClick()">Stop on Win</button>
+    <button class="btn btn-secondary" type="button" onclick="resetTrade()">Reset</button>
+</div>
