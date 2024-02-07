@@ -2,7 +2,7 @@ const{ server,app, express } = require("./utils/Server")
 const BigNumber = require('bignumber.js');
 const path = require('path')
 const bodyParser = require('body-parser')
-const router = require('./routes')
+const router = require('./Routes')
 
 const PORT = process.env.PORT || 3000;
   
