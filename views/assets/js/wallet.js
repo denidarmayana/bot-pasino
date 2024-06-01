@@ -10,26 +10,33 @@ const user_tf = document.getElementById("wallet_tf");
 const amount_tf = document.getElementById("amount_tf");
 const submit_tf = document.getElementById("save_tf");
 const token = localStorage.getItem('token')
-console.log(token)
-var settings = {
-    "url": "./api/deposit",
-    "method": "POST",
-    "timeout": 0,
-    "headers": {
-        "Content-Type": "application/json"
-    },
-    "data": JSON.stringify({
-        "token": token,
-        "coin": "DOGE"
-    }),
-};
 
-$.ajax(settings).done(function (response) {
-	address_wallet.value = response.data.address
-	qr_wallet.src = response.data.qr
-});
+function loadAddress() {
+	var settings = {
+	    "url": "./api/deposit",
+	    "method": "POST",
+	    "timeout": 0,
+	    "headers": {
+	        "Content-Type": "application/json"
+	    },
+	    "data": JSON.stringify({
+	        "token": token,
+	        "coin": "DOGE"
+	    }),
+	};
 
+	$.ajax(settings).done(function (response) {
+		if (response.data == null) {
+			loadAddress();
+		}else{
+			address_wallet.value = response.data.address
+			qr_wallet.src = response.data.qr
+		}
+		
+	});
+}
 
+loadAddress();
 
 submit_wd.addEventListener("click",function () {
 	if (wallet_wd.value == "") {

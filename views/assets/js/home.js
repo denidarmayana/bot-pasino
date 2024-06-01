@@ -1,6 +1,7 @@
 "use strict"
 const balance = document.getElementById("balance");
 const usernames = document.getElementById("username");
+
 usernames.innerHTML = localStorage.getItem('username')
 let saldo;
 const hidden_base_trade = document.getElementById("hidden_base_trade");
