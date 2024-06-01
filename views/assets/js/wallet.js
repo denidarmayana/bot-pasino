@@ -9,8 +9,8 @@ const submit_wd = document.getElementById("save_wd");
 const user_tf = document.getElementById("wallet_tf");
 const amount_tf = document.getElementById("amount_tf");
 const submit_tf = document.getElementById("save_tf");
-
-
+const token = localStorage.getItem('token')
+console.log(token)
 var settings = {
     "url": "./api/deposit",
     "method": "POST",
@@ -19,7 +19,7 @@ var settings = {
         "Content-Type": "application/json"
     },
     "data": JSON.stringify({
-        "token": localStorage.getItem('token'),
+        "token": token,
         "coin": "DOGE"
     }),
 };
@@ -47,7 +47,7 @@ submit_wd.addEventListener("click",function () {
 		        "Content-Type": "application/json"
 		    },
 		    "data": JSON.stringify({
-		        "token": localStorage.getItem('token'),
+		        "token": token,
 		        "coin": "DOGE",
 		        "address":wallet_wd.value,
 		        "amount":amount_wd.value,
@@ -84,7 +84,7 @@ submit_tf.addEventListener("click",function () {
 		        "Content-Type": "application/json"
 		    },
 		    "data": JSON.stringify({
-		        "token": localStorage.getItem('token'),
+		        "token": token,
 		        "coin": "DOGE",
 		        "username":user_tf.value,
 		        "amount":amount_tf.value,

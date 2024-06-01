@@ -59,7 +59,7 @@ let ceksend=1;
 let ifwins = 0;
 let mod=0;
 let stop_ons_wins = false;
-const socket = new WebSocket('ws://103.210.69.93:8080/wss');
+const socket = new WebSocket('ws://108.181.201.185:8080/wss');
 socket.addEventListener('open', (event) => {
   	var auth_socket = JSON.stringify({method:"initialization",socket_token:localStorage.getItem('socket')})
 	socket.send(auth_socket)
